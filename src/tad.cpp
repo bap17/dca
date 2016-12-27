@@ -1,134 +1,119 @@
 #include <iostream>
 using namespace std;
+
 #include "tporo.h"
-
-
+#include "tvectorporo.h"
 
 void tad1(){
-	TPoro a, b, c;
-	cout << "No hace nada" << endl;
+	  TPoro a, b, c;
+  TVectorPoro d, e, f;
+
+  cout << "No hace nada" << endl;
+
 }
 
 void tad2(){
-	TPoro a;
-	cout<<a<<endl;	
+	TPoro auxOK;
+  TVectorPoro a, b(5), c(10);
+
+  cout << a.Longitud() << endl;
+  cout << b.Longitud() << endl;
+  cout << c.Longitud() << endl;
+
 }
 
 void tad3(){
-	TPoro a(1,2,3,"rojo");
-	cout<<a<<endl;
+	TVectorPoro a;
+
+  cout << a << endl;
 }
 
 void tad4(){
-	TPoro a;
-	a.Posicion(10, 20);
-	cout<<a<<endl;
+	  TVectorPoro a(5);
+  TVectorPoro b;
+
+  if(a == b)
+    cout << "SI"  << endl;
+  else
+    cout << "NO" << endl;
+
 }
+
 void tad5(){
-	TPoro a(1,2,3, "rojo");
-	TPoro b;
-	b=a;
-	cout<<a<<endl;
-	cout<<b<<endl;
+	  TPoro a(1, 2, 3, "rojo");
+  TVectorPoro v(5);
+
+  v[1] = a;
+  v[2] = a;
+  v[3] = a;
+  v[4] = a;
+  v[5] = a;
+
+  cout << v << endl;
 }
 
 void tad6(){
-	TPoro a(1, 2, 3, "rojo");
+	 TPoro a(1, 2, 3, "rojo");
+  TVectorPoro v(5), w;
 
-	 cout << "PosicionX: " << a.PosicionX() << endl;
-	 cout << "PosicionY: " << a.PosicionY() << endl;
-	 cout << "Volumen: " << a.Volumen() << endl;
+  v[1] = a;
+  v[2] = a;
+  v[3] = a;
+  v[4] = a;
+  v[5] = a;
+
+  w = v;
+
+  cout << v << endl;
+  cout << w << endl;
+
 }
 
 void tad7(){
-	 TPoro a(1, 2, 3, "rojo");
+	TPoro a(1, 2, 3, "rojo");
+  TVectorPoro v(5);
 
-  if(a.PosicionX() == 1)
-    cout << "SI" << endl;
-  else
-    cout << "NO" << endl;
+  cout << "Cantidad: " << v.Cantidad() << endl;
 
-  if(a.PosicionY() == 2)
-    cout << "SI" << endl;
-  else
-    cout << "NO" << endl;
+  v[1] = a;
+  cout << "Cantidad: " << v.Cantidad() << endl;
+
+  v[2] = a;
+  cout << "Cantidad: " << v.Cantidad() << endl;
+
+  v[3] = a;
+  cout << "Cantidad: " << v.Cantidad() << endl;
+
+  v[4] = a;
+  cout << "Cantidad: " << v.Cantidad() << endl;
+
+  v[5] = a;
+  cout << "Cantidad: " << v.Cantidad() << endl;
+
 }
 
 void tad8(){
-	TPoro a;
+	TPoro a(1, 2, 3, "rojo");
+  TVectorPoro v(5), w;
 
-  if(a.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
+  cout << "Longitud: " << v.Longitud() << endl;
+  cout << "Longitud: " << w.Longitud() << endl;
 
-  a.Color("rojo");
+  w = v;
 
-  if(a.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-
+  cout << "Longitud: " << v.Longitud() << endl;
+  cout << "Longitud: " << w.Longitud() << endl;
 }
 
-void tad9(){
-	  TPoro a;
-
-  if(a.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-
-  a.Color("rojo");
-
-  if(a.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-
-  a.~TPoro();
-
-  if(a.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-}
-
-void tad10(){
-	  TPoro a, b(0, 0, 0, NULL);
-  TPoro c(a), d(b);
-
-  if(a.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-
-  if(b.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-
-  if(c.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-
-  if(d.EsVacio())
-    cout << "VACIO" << endl;
-  else
-    cout << "NO VACIO" << endl;
-}
 
 int main(void){
 
-	cout<<"Comprobamos tad1: "<<endl; tad1();
-	cout<<"Comprobamos tad2: "<<endl; tad2();
-	cout<<"Comprobamos tad3: "<<endl; tad3();
-	cout<<"Comprobamos tad4: "<<endl; tad4();
-	cout<<"Comprobamos tad5: "<<endl; tad5();
-	cout<<"Comprobamos tad6: "<<endl; tad6();
-	cout<<"Comprobamos tad7: "<<endl; tad7();
-	cout<<"Comprobamos tad8: "<<endl; tad8();
-	cout<<"Comprobamos tad9: "<<endl; tad9();
-	cout<<"Comprobamos tad10: "<<endl; tad10();
+	cout<<"Salida tad1: "<<endl; tad1();
+	cout<<"Salida tad2: "<<endl; tad2();
+	cout<<"Salida tad3: "<<endl; tad3();
+	cout<<"Salida tad4: "<<endl; tad4();
+	cout<<"Salida tad5: "<<endl; tad5();
+	cout<<"Salida tad6: "<<endl; tad6();
+	cout<<"Salida tad7: "<<endl; tad7();
+	cout<<"Salida tad8: "<<endl; tad8();	
 }
