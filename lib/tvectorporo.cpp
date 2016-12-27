@@ -107,7 +107,7 @@ int TVectorPoro::Cantidad()const{
 	int ocupadas=0;
 	for(int i=0; i<this->dimension; i++){
 		if(!this->datos[i].EsVacio()){
-			ocupadas--;
+			ocupadas++;
 		}
 	}
 	return ocupadas;
