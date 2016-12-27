@@ -34,6 +34,7 @@ public:
 	//Destructor
 	~TListaNodo();
 
+
 };
 
 /*
@@ -57,6 +58,13 @@ public:
 	TListaPosicion (const TListaPosicion &lp);
 	//Destructor
 	~TListaPosicion();
+	
+	//Devuelve la posicion anterior
+	TListaPosicion Anterior();
+	//Devuelve la posicion siguiente
+	TListaPosicion Siguiente();
+	//Devuelve TRUE si la posicion no apunta a un lista, FALSE en caso contrario
+	bool EsVacia();
 
 
 };
@@ -87,6 +95,12 @@ public:
 	TListaPoro (const TListaPoro &lp);
 	//Destructor
 	~TListaPoro();
+	
+	//Devuelve true si la lista está vacía, false en caso contrario
+	bool EsVacia()const;
+
+	//Devuelve la primera posicion en la lista
+	TListaPosicion Primera()const;
 
 
 

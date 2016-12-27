@@ -55,6 +55,42 @@ TListaPosicion::~TListaPosicion(){
 
 
 
+//Devuelve la posicion anterior
+TListaPosicion TListaPosicion::Anterior(){
+
+	TListaPosicion p;
+	if(this->pos==NULL){
+
+	}else{
+		p.pos=pos->anterior;
+	}
+	return p;	
+}
+
+//Devuelve la posicion siguiente
+TListaPosicion TListaPosicion::Siguiente(){
+	
+	TListaPosicion p;
+	if(this->pos==NULL){
+		
+	}else{
+		p.pos=pos->siguiente;
+	}
+	return p;
+}
+
+//Devuelve TRUE si la posicion no apunta a una lista, FALSE en caso contrario
+bool TListaPosicion::EsVacia(){
+	bool vacia=true;
+	if(pos!=NULL){
+		vacia=false;
+	}
+	return vacia;
+}
+
+
+
+
 /*
 **************************************************
 **************************************************
@@ -103,4 +139,23 @@ TListaPoro::~TListaPoro(){
 	ultimo = NULL;
 }
 
+//Devuelve true si la lista esta vacia, false en caso contrario
+bool TListaPoro::EsVacia()const{
+	bool vacia=false;
+	if(primero==NULL && ultimo==NULL){
+		vacia=true;
+	}
+	return vacia;
 }
+
+
+
+//Devuelve la primera posicion en la lista
+TListaPosicion TListaPoro::Primera()const{
+	TListaPosicion pos;
+	if(!this->EsVacia()){
+		pos.pos=primero;
+	}
+	return pos;
+}
+
