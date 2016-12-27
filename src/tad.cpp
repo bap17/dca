@@ -6,7 +6,7 @@ using namespace std;
 
 void tad1(){
 	TPoro a, b, c;
-  TListaPoro d, e, f;
+  TListaPoro d,  e, f;
 
   cout << "No hace nada" << endl;
 }
