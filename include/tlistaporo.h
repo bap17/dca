@@ -33,7 +33,8 @@ public:
 	TListaNodo (TListaNodo &ln);
 	//Destructor
 	~TListaNodo();
-
+	//Sobrecarga del operador asignacion
+	TListaNodo & operator=(const TListaNodo &ln);
 
 };
 
@@ -58,13 +59,18 @@ public:
 	TListaPosicion (const TListaPosicion &lp);
 	//Destructor
 	~TListaPosicion();
-	
+	//Sobrecarga del operador asignacion
+	TListaPosicion& operator=(const TListaPosicion &lp);
+	//Sobrecarga del operador igualdad
+	bool operator==(const TListaPosicion &lp);
+	bool operator!=(const TListaPosicion &lp);
 	//Devuelve la posicion anterior
 	TListaPosicion Anterior();
 	//Devuelve la posicion siguiente
 	TListaPosicion Siguiente();
 	//Devuelve TRUE si la posicion no apunta a un lista, FALSE en caso contrario
 	bool EsVacia();
+
 
 
 };
@@ -95,12 +101,35 @@ public:
 	TListaPoro (const TListaPoro &lp);
 	//Destructor
 	~TListaPoro();
-	
+	//Sobrecarga del operador asignacion
+	TListaPoro & operator=(const TListaPoro &lp);
+	//Sobrecarga del operador igualdad
+	bool operator==(const TListaPoro &lp);
+	//Sobrecarga del operador suma
+	TListaPoro operator+(const TListaPoro &lp);
+	//Sobrecarga operador resta
+	TListaPoro operator-(const TListaPoro &lp);
 	//Devuelve true si la lista está vacía, false en caso contrario
 	bool EsVacia()const;
-
+	//Inserta el elemento en el lista
+	bool Insertar(const TPoro &p);
+	//Busca y borra el elemento
+	bool Borrar(const TPoro &p);
+	//Borra el elemento que ocupa la posicion indicada
+	bool Borrar(const TListaPosicion &lp);
+	//Obtiene el elemento que ocupa la posicion indicada
+	TPoro Obtener(const TListaPosicion &lp)const;
+	//Devuelve true si el elemento esta en la lista, false en caso contrario
+	bool Buscar(const TPoro &p)const;
+	//Devuelve la longitud de la lista
+	int Longitud()const;
 	//Devuelve la primera posicion en la lista
 	TListaPosicion Primera()const;
+	//Devuelve la ultima posicion en la lista
+	TListaPosicion Ultima()const;
+	//Extraer un rango de nodos de la lista
+	TListaPoro ExtraerRango(const int n1, const int n2);	
+
 
 
 
